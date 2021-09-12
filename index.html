@@ -10,12 +10,25 @@
 
         <!-- Stylesheet -->
         <link href="./style.css" rel="stylesheet">
-
+            <!-- Font -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
         <!-- Script -->
         <script src="./script.js"></script>
     </head>
 
-    <body>
+    <body style="font-family: 'Lato', sans-serif; text-align: center;" >
+        <div class="header" style="font-size: 50px">
+            <p>
+                Base64 to Text Converter
+            </p>
+            <p style="font-size: 25px">
+                Paste or type into either of the text boxes below to convert the text instantly!
+            </p>
+            <br>
+            <hr> 
+        </div>
         <div class="main">
             <div class="input-group mb-3">
                 <span role="textbox" class="form-control textbox-b64" id="b64" contenteditable placeholder="Base64" aria-label="Base64"></span>
