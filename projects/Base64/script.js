@@ -1,6 +1,6 @@
 
 $(document).ready (() => {
-    window.history.replaceState({}, "", "projects/Base64");
+    window.history.replaceState({}, "", "");
     $("#b64").keyup( function() {
         try {
             $("#pt").text(atob($("#b64").text()));
