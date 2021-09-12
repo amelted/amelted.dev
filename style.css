@@ -1,0 +1,14 @@
+.main {
+    padding-top: 15%;
+    width: 90%;
+    text-align: left;
+    padding-left: 10%;
+}
+.textbox-b64[contenteditable]:empty::before{
+    content: "Base64";
+    color: gray;
+}
+.textbox-pt[contenteditable]:empty::before{
+    content: "Plain Text";
+    color: gray;
+}
