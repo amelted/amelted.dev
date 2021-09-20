@@ -1,7 +1,7 @@
 
 $(document).ready (() => {
     // window.history.replaceState({}, "", "");
-    $('n').load("/NavBar.html")
+    
     $("#b64").keyup( function() {
         try {
             $("#pt").text(atob($("#b64").text()));
@@ -16,6 +16,10 @@ $(document).ready (() => {
             $("#b64").text("There was an error encoding your text!")
         } 
     });
+})
+
+$(() => {
+    $('n').load("/NavBar.html")
 })
 
 
