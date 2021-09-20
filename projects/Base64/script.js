@@ -1,6 +1,7 @@
 
 $(document).ready (() => {
     // window.history.replaceState({}, "", "");
+    $('n').load("/NavBar.html")
     $("#b64").keyup( function() {
         try {
             $("#pt").text(atob($("#b64").text()));

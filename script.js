@@ -1,8 +1,6 @@
 const discord = "shobie#1577"
 
-$(document).ready(() => {
-    $(".n").load("NavBar.html")
-})
+
 $(function () { 
     $("#disc").popover({
         title: '',
@@ -10,6 +8,7 @@ $(function () {
         trigger: 'hover',
         delay: {show: 0, hide: 0}
     });
+    $(".n").load("NavBar.html");
     $('#disc').click(() =>{
         navigator.clipboard.writeText(discord);
     })
