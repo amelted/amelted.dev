@@ -1,7 +1,7 @@
 const discord = "shobie#1577"
 
 $(document).ready(() => {
-    $(".navbar").load("NavBar.html")
+    $(".n").load("NavBar.html")
 })
 $(function () { 
     $("#disc").popover({
