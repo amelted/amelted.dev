@@ -18,8 +18,5 @@ $(document).ready (() => {
     });
 })
 
-$(() => {
-    $('n').load("/NavBar.html")
-})
 
 
