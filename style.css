@@ -164,9 +164,19 @@ body{
 }
 .juh{
     display: inline-flex;
+    float: right;
+    outline: solid 1px #2f2539
 }
 .jn{
     margin-right: 0px;
+}
+.parentC{
+    padding: 20px;
+}
+.child { 
+    float: left;
+    width 50%;
+    border-radius: 1px;
 }
 body{
     background-color: #657265;
