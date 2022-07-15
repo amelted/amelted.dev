@@ -52,7 +52,7 @@ body{
 .arrow{
     cursor: default;
     clip-path: polygon(15% 0%,40% 50%,15% 100%,0.00% 100.00%,25% 50%,0.00% 0.00%);
-    background-image: url(/assets/images/background.svg);
+    background-image: url("./assets/images/background.svg");
     background-size: 100px;
     transition: 0.5s;
     color: #835757;
@@ -123,7 +123,6 @@ body{
 }
 .left{
     text-align: left;
-    margin-right: auto;
 }
 .linux-distro{
     color: rgb(100, 100, 100);
@@ -148,4 +147,27 @@ body{
 }
 .thin {
     width: 45vw;
+}
+.spacer.XS {
+    width:25px
+}
+.ico.blur{
+    background-image: url("assets/images/background.svg");
+    backdrop-filter: blur(5px);
+}
+.outline{
+    -webkit-text-stroke: 1px whitesmoke;
+
+}
+.darker {
+    background-color: dimgrey;
+}
+.juh{
+    display: inline-flex;
+}
+.jn{
+    margin-right: 0px;
+}
+body{
+    background-color: #657265;
 }

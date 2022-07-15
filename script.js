@@ -1,4 +1,4 @@
-const discord = "girlboss#1577"
+const discord = "amelted#1577"
 
 
 $(function () { 
