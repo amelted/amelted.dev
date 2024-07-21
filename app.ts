@@ -24,10 +24,10 @@ let middleware = (req: Request, res: Response, next: Function) => {
     next();
 }
 app.all("*", middleware);
-app.all("*", (request: Request, response: Response)=>{
-    response.status(404).send(`you seem lost...`);
-    response.end();
-})
+// app.all("*", (request: Request, response: Response)=>{
+//     response.status(404).send(`you seem lost...`);
+//     response.end();
+// })
 app.use(express.static("./static/"));
 
 const httpsServer : any = https.createServer(
@@ -39,11 +39,11 @@ const httpsServer : any = https.createServer(
 })
 const httpApp = express();
 httpApp.all("*", middleware);
-httpApp.all("*", (request: Request, response: Response)=>{
-    response.statusCode = 404
-    response.send(`you seem lost...`);
-    response.end();
-})
+// httpApp.all("*", (request: Request, response: Response)=>{
+//     response.statusCode = 404
+//     response.send(`you seem lost...`);
+//     response.end();
+// })
 httpApp.use(express.static("./static/"));
 
 const httpServer = http.createServer(httpApp);
