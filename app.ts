@@ -4,8 +4,6 @@ import http, {ServerResponse, IncomingMessage} from 'http'
 import fs, {readFileSync} from 'fs'
 const app = express()
 let middleware = (req: Request, res: Response, next: Function) => {
-    
-    
     if(req.get('host') == "lol.amelted.dev"){
         if(req.originalUrl.includes("assets")){
             if(!fs.existsSync(`./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`)){
