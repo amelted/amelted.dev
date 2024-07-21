@@ -9,16 +9,17 @@ let middleware = (req: Request, res: Response, next: Function) => {
     if(req.get('host') == "lol.amelted.dev"){
         if(req.originalUrl.includes("assets")){
             if(!fs.existsSync(`./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`)){
-                res.end(); 
+                res.status(404).send(`you seem lost...`);; 
                 next();return;
             }
                
             res.send(readFileSync(`./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`))
             res.end(); 
             next();return;
+        } else{
+            res.send(readFileSync('./static/lol/index.html', 'utf-8'))
+            res.end();
         }  
-        res.send(readFileSync('./static/lol/index.html', 'utf-8'))
-        res.end();
     }
     next();
 }
@@ -28,8 +29,6 @@ app.all("*", (request: Request, response: Response)=>{
     response.end();
 })
 app.use(express.static("./static/"));
-
-
 
 const httpsServer : any = https.createServer(
     {
