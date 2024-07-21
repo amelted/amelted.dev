@@ -8,19 +8,7 @@ let middleware = (req: Request, res: Response, next: Function) => {
     if(req.get('host') != "lol.amelted.dev"){
         next();return;
     }
-    if(!req.originalUrl.includes("assets")){
-        res.sendFile('/static/lol/index.html', {root: __dirname});
-        next();return;
-
-    }
-    let filename = `./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`;
-    if(!fs.existsSync(filename)){
-        res.statusCode = 404;
-        res.send(`you seem lost...`); 
-        next();return;
-    }
-        
-    res.sendFile(filename, {root: __dirname});
+    res.sendFile('/static/lol/index.html', {root: __dirname});
     next();return;
 }
 app.all("*", middleware);
