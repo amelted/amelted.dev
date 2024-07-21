@@ -11,11 +11,11 @@ let middleware = (req: Request, res: Response, next: Function) => {
                 next();return;
             }
                
-            res.send(readFileSync(`./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`))
+            res.sendFile(`./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`);
             res.end(); 
             next();return;
         } else{
-            res.send(readFileSync('./static/lol/index.html', 'utf-8'))
+            res.sendFile('./static/lol/index.html')
             res.end();
         }  
     }
