@@ -17,7 +17,7 @@ let middleware = (req: Request, res: Response, next: Function) => {
             res.end(); 
             next();return;
         }  
-        res.render(readFileSync('./static/lol/index.html', 'utf-8'))
+        res.send(readFileSync('./static/lol/index.html', 'utf-8'))
         res.end();
     }
     next();
