@@ -13,8 +13,8 @@ const httpsServer : any = https.createServer(
     }, app).listen(443, () =>{
     console.log("listening!")
 })
-const httpApp = express();
-httpApp.all('*', (req, res) => res.redirect(301, 'https://amelted.dev'));
-const httpServer = http.createServer(httpApp);
+// const httpApp = express();
+// httpApp.all('*', (req, res) => res.redirect(301, 'https://amelted.dev'));
+// const httpServer = http.createServer(httpApp);
 
-httpServer.listen(80, () => console.log(`HTTP server listening: http://localhost`));
+// httpServer.listen(80, () => console.log(`HTTP server listening: http://localhost`));
