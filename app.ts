@@ -1,21 +1,20 @@
 import express, { Request, Response, request } from 'express'
 import https, {createServer} from 'https'
 import http, {ServerResponse, IncomingMessage} from 'http'
+import {readFileSync} from 'fs'
 const app = express()
 
 app.use(express.static("./static/"));
 
-const httpsServer : any = https.createServer({}, app);
-
-let server = app.listen(443, () =>{
+const httpsServer : any = https.createServer(
+    {
+        key: readFileSync('server.key'), 
+        cert: readFileSync('server.cert')
+    }, app).listen(443, () =>{
     console.log("listening!")
 })
-const httpServer : any = createServer({}, (req: IncomingMessage, res: ServerResponse) => {
-    res.statusCode = 301
-    res.setHeader('location', "https://amelted.dev")
-    res.end();
-});
-// httpServer.on('request', (req: Request, res: Response) => )
-httpServer.listen(80, () => {
-    console.info(`HTTP Server running on port 80.`);
-});
+const httpApp = express();
+httpApp.all('*', (req, res) => res.redirect(300, 'https://amelted.dev'));
+const httpServer = http.createServer(httpApp);
+
+httpServer.listen(80, () => console.log(`HTTP server listening: http://localhost`));
