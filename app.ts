@@ -15,7 +15,7 @@ let middleware = (req: Request, res: Response, next: Function) => {
             res.end(); 
             next();return;
         } else{
-            res.sendFile('./static/lol/index.html')
+            res.sendFile('/static/lol/index.html', {root: __dirname})
             res.end();
         }  
     }
