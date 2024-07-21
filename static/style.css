@@ -185,6 +185,7 @@ body{
     background-image: url(./assets/images/20220820_003113.jpg);
     background-size: 100%;
     background-position-y: center;
+    width: inherit;
 }
 .maxW {
     width: inherit;
@@ -192,4 +193,13 @@ body{
 .text{
     color:rgba(63, 218, 216, 1);
     text-shadow: 2px 2px 5px rgb(66, 62, 62);
+}
+.cards{
+    width: 25vw;
+    float:right;
+    padding-right: 25vw;
+}
+.card-container{
+    width: 18rem;
+    margin:5px;
 }
