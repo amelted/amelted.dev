@@ -14,7 +14,7 @@ const httpsServer : any = https.createServer(
     console.log("listening!")
 })
 const httpApp = express();
-httpApp.all('*', (req, res) => res.redirect(300, 'https://amelted.dev'));
+httpApp.all('*', (req, res) => res.redirect(301, 'https://amelted.dev'));
 const httpServer = http.createServer(httpApp);
 
 httpServer.listen(80, () => console.log(`HTTP server listening: http://localhost`));
