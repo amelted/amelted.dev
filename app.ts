@@ -8,11 +8,6 @@ app.use(express.static("./static/"));
 const httpsServer : any = https.createServer({}, app);
 
 let server = app.listen(443)
-let app80 = express()
-app80.all('*',(request: Request, res: Response) => {
-    res.redirect(`${request.url.replace('http', 'https')}`)
-})
-app80.listen(80)
 // const httpServer : any = createServer({}, (req: IncomingMessage, res: ServerResponse) => {
 //     res.statusCode = 301
 //     res.setHeader('location', "https://amelted.dev")
