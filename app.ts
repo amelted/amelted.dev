@@ -12,16 +12,16 @@ let middleware = (req: Request, res: Response, next: Function) => {
     next();return;
 }
 app.all("*", middleware);
-app.all("/assets/*", (req, res)=> {
-    let filename = `./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`;
-    if(!fs.existsSync(filename)){
-        res.statusCode = 404;
-        res.send(`you seem lost...`); 
-        return;
-    }
-    res.sendFile(filename, {root: __dirname});
-    return;
-})
+// app.all("/assets/*", (req, res)=> {
+//     let filename = `./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`;
+//     if(!fs.existsSync(filename)){
+//         res.statusCode = 404;
+//         res.send(`you seem lost...`); 
+//         return;
+//     }
+//     res.sendFile(filename, {root: __dirname});
+//     return;
+// })
 // app.all("*", (request: Request, response: Response)=>{
 //     response.status(404).send(`you seem lost...`);
 //     response.end();
