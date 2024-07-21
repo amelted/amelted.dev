@@ -13,7 +13,7 @@ let middleware = (req: Request, res: Response, next: Function) => {
                 next();return;
             }
                
-            res.sendFile(`./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`)
+            res.send(readFileSync(`./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`))
             res.end(); 
             next();return;
         }  
