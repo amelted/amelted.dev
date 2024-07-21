@@ -11,10 +11,9 @@ const httpsServer : any = https.createServer(
         key: readFileSync('server.key'), 
         cert: readFileSync('server.cert')
     }, app).listen(443, () =>{
-    console.log("listening!")
+    console.log("443 listening!")
 })
-// const httpApp = express();
-// httpApp.all('*', (req, res) => res.redirect(301, 'https://amelted.dev'));
-// const httpServer = http.createServer(httpApp);
-
-// httpServer.listen(80, () => console.log(`HTTP server listening: http://localhost`));
+const httpApp = express();
+httpApp.use(express.static("./static/"));
+const httpServer = http.createServer(httpApp);
+httpServer.listen(80, () => console.log(`80 is on`));
