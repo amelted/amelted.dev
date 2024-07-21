@@ -6,6 +6,7 @@ const app = express()
 
 app.use(express.static("./static/"));
 app.use((req, res, next) => {
+    console.log(req.get('host'))
     if(req.get('host') == "lol.amelted.dev"){
         res.render(readFileSync('./static/lol/index.html', 'utf-8'))
         res.end();
