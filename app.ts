@@ -41,7 +41,8 @@ const httpApp = express();
 httpApp.all("*", middleware);
 httpApp.use(express.static("./static/"));
 httpApp.all("*", (request: Request, response: Response)=>{
-    response.status(404).send(`you seem lost...`);
+    response.statusCode = 404
+    response.send(`you seem lost...`);
     response.end();
 })
 const httpServer = http.createServer(httpApp);
