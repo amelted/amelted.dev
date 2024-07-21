@@ -11,7 +11,7 @@ let middleware = (req: Request, res: Response, next: Function) => {
                 next();return;
             }
                
-            res.sendFile(`/static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`);
+            res.sendFile(`/static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`, {root: __dirname});
             res.end(); 
             next();return;
         } else{
