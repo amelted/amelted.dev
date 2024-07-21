@@ -40,6 +40,9 @@ const httpsServer : any = https.createServer(
 const httpApp = express();
 httpApp.all("*", middleware);
 httpApp.use(express.static("./static/"));
-
+httpApp.all("*", (request: Request, response: Response)=>{
+    response.status(404).send(`you seem lost...`);
+    response.end();
+})
 const httpServer = http.createServer(httpApp);
 httpServer.listen(80, () => console.log(`80 is on`));
