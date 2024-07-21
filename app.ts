@@ -23,11 +23,12 @@ let middleware = (req: Request, res: Response, next: Function) => {
     next();
 }
 app.all("*", middleware);
-app.use(express.static("./static/"));
 app.all("*", (request: Request, response: Response)=>{
     response.status(404).send(`you seem lost...`);
     response.end();
 })
+app.use(express.static("./static/"));
+
 
 
 const httpsServer : any = https.createServer(
