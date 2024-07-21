@@ -12,7 +12,7 @@ let middleware = (req: Request, res: Response, next: Function) => {
     next();return;
 }
 app.all("*", middleware);
-app.all("/assets/motivational**.png", (req, res)=> {
+app.all("/assets/*", (req, res)=> {
     let filename = `./static/lol/assets/motivational${req.originalUrl.slice(20,22)}.png`;
     if(!fs.existsSync(filename)){
         res.statusCode = 404;
