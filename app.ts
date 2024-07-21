@@ -13,6 +13,7 @@ let server = app.listen(443, () =>{
 const httpServer : any = createServer({}, (req: IncomingMessage, res: ServerResponse) => {
     res.statusCode = 301
     res.setHeader('location', "https://amelted.dev")
+    res.end();
 });
 // httpServer.on('request', (req: Request, res: Response) => )
 httpServer.listen(80, () => {
