@@ -1,0 +1,13 @@
+<head>
+</head>
+<body id="lol">
+
+</body>
+<script>
+    for(let i = 1; i <= 24; i++){
+        let j = document.createElement('img')
+        j.setAttribute("src",`./assets/motivational${(i < 10)? "0" : ""}${i}.png`)
+        j.setAttribute("width", "250px")
+        document.getElementById('lol').appendChild(j)
+    }
+</script>

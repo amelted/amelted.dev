@@ -1,0 +1,186 @@
+body{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+.spacer{
+    width: 100px;
+}
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+    margin-left:auto
+}
+.center{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fs25{
+    font-size: 25px;
+}
+.easter{
+    width: min-content;
+    transition: all 0s;
+}
+.easter.active{
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    background-size: 400% 100%;
+    transition: all 0s;
+    animation: infinite rainbow 4s ease-in-out ;
+}
+
+.arrow{
+    cursor: default;
+    clip-path: polygon(15% 0%,40% 50%,15% 100%,0% 100%,25% 50%,0.00% 0.00%);
+    background-image: url("./assets/images/background.svg");
+    background-size: 100px;
+    transition: 0.5s;
+    color: #835757;
+}
+.arrow.hover{
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 50% 100%, 75% 51%, 50% 0);
+}
+.arrow.active{
+    clip-path: polygon(100% 60%,100% 75%,50% 100%,0% 75%,0% 60%,50% 85%) !important;
+}
+.heada{
+    width: 50%;
+}
+.abtp {
+    max-height: 0px;
+    overflow-y: clip;
+    transition: max-height 0.5s ease;
+    width: 45%;
+    margin-right: auto;
+}
+.abtp.active{
+    max-height: 350px;
+    transition: max-height 1.75s ease;
+}
+@-webkit-keyframes rainbow {
+    0% {
+        background-position:0% 82%
+    }
+    50% {
+        background-position:100% 19%
+    }
+    100% {
+        background-position:0% 82%
+    }
+}
+@-moz-keyframes rainbow {
+    0% {
+        background-position:0% 82%
+    }
+    50% {
+        background-position:100% 19%
+    }
+    100% {
+        background-position:0% 82%
+    }
+}
+@-o-keyframes rainbow {
+    0% {
+        background-position:0% 82%
+    }
+    50% {
+        background-position:100% 19%
+    }
+    100% {
+        background-position:0% 82%
+    }
+}
+@keyframes rainbow { 
+    0% {
+        background-position:0% 82%
+    }
+    50% {
+        background-position:100% 19%
+    }
+    100% {
+        background-position:0% 82%
+    }
+}
+.left{
+    text-align: left;
+}
+.linux-distro{
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+}
+.j{
+    width: max-content;
+}
+.left.container{
+    margin-left: 0.2vw;
+}
+.abtCont{
+    padding: 0;
+}
+.abtCont.inactive{
+    height: 0px;
+    display: none;
+}
+.abtCont.active{
+    height: max-content;
+    transition: all 1s;
+}
+.thin {
+    width: 45vw;
+}
+.spacer.XS {
+    width:25px
+}
+.ico.blur{
+    background-image: url("assets/images/background.svg");
+    backdrop-filter: blur(5px);
+}
+.outline{
+    -webkit-text-stroke: 1px whitesmoke;
+
+}
+.darker {
+    background-color: dimgrey;
+}
+.juh{
+    display: inline-flex;
+    float: right;
+    outline: solid 1px #2f2539
+}
+.jn{
+    margin-right: 0px;
+}
+.parentC{
+    padding: 20px;
+}
+.child { 
+    float: left;
+    width: 50%;
+    border-radius: 1px;
+}
+body{
+    background-color: #657265;
+}
+.maxW {
+    width: inherit;
+}
