@@ -7,25 +7,26 @@ import vhost from 'vhost'
 const app = express()
 
 let lolApp = express()
-    .use(express.static("./static/lol"));
+    .use(express.static("./lol.amelted.dev/"));
 
 //app.all("*", middleware);
 app.all("*", (request: Request, response: Response)=>{
     response.status(404).send(`you seem lost...`);
     response.end();
 })
-app.use(express.static("./static/"));
+app.use(express.static("./amelted.dev/"));
 let serv = express()
     .use(vhost("lol.amelted.dev", lolApp))
     .use(vhost("amelted.dev", app));
+
+
+// Create the HTTP/S servers, using the vhosted express app.
+
 const httpsServer : any = https.createServer(
     {
         key: readFileSync('server.key'), 
         cert: readFileSync('server.cert')
-    }, serv).listen(443, () =>{
-    console.log("443 listening")
-})
-
-
+    }, serv)
+        .listen(443, () => console.log("443 listening"))
 const httpServer = http.createServer(serv)
     .listen(80, () => console.log(`80 is on`));
