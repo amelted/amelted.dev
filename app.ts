@@ -10,11 +10,13 @@ let lolApp = express()
     .use(express.static("./lol.amelted.dev/"));
 
 //app.all("*", middleware);
+app.use(express.static("./amelted.dev/"));
+
 app.all("*", (request: Request, response: Response)=>{
     response.status(404).send(`you seem lost...`);
     response.end();
 })
-app.use(express.static("./amelted.dev/"));
+
 let serv = express()
     .use(vhost("lol.amelted.dev", lolApp))
     .use(vhost("amelted.dev", app));
