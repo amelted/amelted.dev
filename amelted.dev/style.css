@@ -138,12 +138,22 @@ body{
     padding: 0;
 }
 .abtCont.inactive{
-    height: 0px;
+    font-size: 0px;
+    /* height: 0px; */
     display: none;
 }
 .abtCont.active{
-    height: max-content;
-    transition: all 1s;
+    /*height: max-content;*/
+    transition: font-size 1s;
+    /* font-size: 3vh; */
+    display: block;
+}
+.abtContPre {
+    font-size: 0px;
+}
+.abtContActive {
+    font-size: 3vh;
+    /* transition: all 2s; */
 }
 .thin {
     width: 45vw;
@@ -202,4 +212,11 @@ body{
 .card-container{
     width: 18rem;
     margin:5px;
+}
+.right.header {
+    font-size: 5vh;
+}
+#left-header{
+    font-size: 15vh;
+    width: 30vw;
 }
