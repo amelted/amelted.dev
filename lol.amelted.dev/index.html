@@ -26,10 +26,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body id="lol">
-
+    <a id="jitter" href="">enable jitter</a>
 </body>
 <script>
-    
+    let jitter = false;
+    let interval;
+    let toggleJitter = () => {
+        if (jitter){
+            clearInterval(interval);
+        }else {
+            interval = setInterval(() =>{
+                $('[id=image]').forEach(element => {
+                    element.attr("width", `${240 + (Math.floor(Math.random()*10)-5)}px`);
+                });
+            }, 75)
+        }
+    }
  	
     let showFull = (event) => {
         let fullSizeUrl = event.target.currentSrc.replace("previews", "images");
@@ -40,10 +52,13 @@
     $.getJSON("/api/count", function( data ) {
         for(let i = 1; i <= data.count; i++){
             $( "<img>" )
+                .attr("id", "image")
                 .attr( "src", `/assets/previews/motivational${(i < 10)? "0" : ""}${i}.png` )
                 .attr("width", `${240 + (Math.floor(Math.random()*10)-5)}px`)
                 .click(showFull)
                 .appendTo( "body" );
         }
     })
+    $.ready(()=>$('#jitter').click(toggleJitter))
+
 </script>
