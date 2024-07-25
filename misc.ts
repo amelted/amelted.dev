@@ -6,6 +6,6 @@ export let s404 = (request: Request, response: Response)=>{
     response.end();
 }
 export let lolFiles = (request: Request, response: Response)=>{
-    let arr = fs.readdirSync('./lol.amelted.dev/assets/')
+    let arr = fs.readdirSync('./lol.amelted.dev/assets/images/')
     response.json({count: arr.length}).end();
 }

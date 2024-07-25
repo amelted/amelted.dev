@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^4.19.2",
+    "gm": "^1.25.0",
     "vhost": "^3.0.2"
   },
   "devDependencies": {
