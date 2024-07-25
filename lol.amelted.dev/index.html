@@ -20,7 +20,7 @@
 
     $.getJSON("/api/count", function( data ) {
         for(let i = 1; i <= data.count; i++){
-            $( "<img>" ).attr( "src", `/assets/motivational${i}` ).appendTo( "body" );
+            $( "<img>" ).attr( "src", `/assets/motivational${i}.png` ).appendTo( "body" );
         }
     })
     // i sure wish there was a way for me to not have to hardcode this that doesnt involve a rest api 
