@@ -36,7 +36,7 @@
             clearInterval(interval);
         }else {
             interval = setInterval(() =>{
-                $('[id=image]').forEach(element => {
+                $('[id=image]').toArray().forEach(element => {
                     element.attr("width", `${240 + (Math.floor(Math.random()*10)-5)}px`);
                 });
             }, 75)
