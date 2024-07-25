@@ -34,12 +34,14 @@
     let toggleJitter = () => {
         if (jitter){
             clearInterval(interval);
+            jitter = false;
         }else {
             interval = setInterval(() =>{
                 $('[id=image]').toArray().forEach(element => {
-                    element.attr("width", `${240 + (Math.floor(Math.random()*10)-5)}px`);
+                    element.setAttribute("width", `${240 + (Math.floor(Math.random()*10)-5)}px`);
                 });
             }, 75)
+            jitter = true
         }
     }
  	
