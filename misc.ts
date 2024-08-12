@@ -3,11 +3,11 @@ import fs from 'fs'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 
 export let proxyPub = createProxyMiddleware({
-    pathFilter: ["/", "/listen"],
+    //pathFilter: ["/", "/listen", "/api/", "/static/" ],
     target: "http://127.0.0.1:160",
     pathRewrite: {
-        "/": "http://127.0.0.1:160/public/melted_jam",
-        "/listen": "http://127.0.0.1:160/listen/melted_jam/radio.mp3"
+        '^\/listen': '/listen/melted_jam/radio.mp3',
+        '^\/$': '/public/melted_jam'
     },
     changeOrigin: true
 })
