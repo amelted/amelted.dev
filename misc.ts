@@ -6,9 +6,8 @@ export let proxyPub = createProxyMiddleware({
     //pathFilter: ["/", "/listen", "/api/", "/static/" ],
     target: "http://127.0.0.1:160",
     pathRewrite: {
-        '^\/listen' : '/listen/melted_jam/radio.mp3',
-        '^\/listen\/melted_jam\/bad\.mp3': '/listen/melted_jam/bad.mp3',
-        '^\/listen\/melted_jam\/radio\.flac': '/listen/melted_jam/radio.flac',
+        '^\/listen.$' : '/listen',
+        '^\/listen\/$': '/listen/melted_jam/',
 
         '^\/$': '/public/melted_jam'
     },
