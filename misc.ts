@@ -3,15 +3,15 @@ import fs from 'fs'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 
 export let proxyPub = createProxyMiddleware({
-    target: "127.0.0.0:160",
+    target: "http://127.0.0.1:160",
     pathRewrite: {
-        "/":
-        "/public/melted_jam"
+        "/": "http://127.0.0.0:160/public/melted_jam",
+        "/listen": "http://127.0.0.1:160/listen/melted_jam/radio.mp3"
     }
 })
 export let proxyRadio = createProxyMiddleware({
-    target: "127.0.0.0:160/listen/melted_jam/radio.mp3",
-    pathFilter: "/listen"
+    target: "http://127.0.0.1:160/",
+    pathFilter: "/listen/melted_jam/radio.mp3"
 
 })
 export let s404 = (request: Request, response: Response)=>{
