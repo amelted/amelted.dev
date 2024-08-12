@@ -3,6 +3,7 @@ import fs from 'fs'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 
 export let proxyPub = createProxyMiddleware({
+    pathFilter: ["/", "/listen"],
     target: "http://127.0.0.1:160",
     pathRewrite: {
         "/": "http://127.0.0.1:160/public/melted_jam",
