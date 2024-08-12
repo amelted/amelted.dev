@@ -8,6 +8,7 @@ export let proxyPub = createProxyMiddleware({
     pathRewrite: {
         '^\/listen.$' : '/listen',
         '^\/listen\/$': '/listen/melted_jam/',
+        '^\/webdj\/$': '/webdj/',
 
         '^\/$': '/public/melted_jam'
     },
