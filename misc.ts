@@ -10,11 +10,8 @@ export let proxyPub = createProxyMiddleware({
     }
 })
 export let proxyRadio = createProxyMiddleware({
-    target: "127.0.0.0:160",
-    pathRewrite: {
-        "/listen":
-        "/listen/melted_jam/radio.mp3"
-    }
+    target: "127.0.0.0:160/listen/melted_jam/radio.mp3",
+    pathFilter: "/listen"
 
 })
 export let s404 = (request: Request, response: Response)=>{
