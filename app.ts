@@ -15,7 +15,7 @@ let lolApp = express()
     .get('/api/count', lolFiles)
     .all("*", s404);
 let radioApp = express()
-    .use(proxy("localhost:160/public/melted_jam"))
+    .use("/", proxy("localhost:160/public/melted_jam"))
     .use('/listen', proxy("localhost:160/listen/melted_jam/radio.mp3"))
 let serv = express()
     .use(vhost("lol.amelted.dev", lolApp))
