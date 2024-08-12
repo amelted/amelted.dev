@@ -20,7 +20,7 @@ let radioApp = express()
 let serv = express()
     .use(vhost("lol.amelted.dev", lolApp))
     .use(vhost("amelted.dev", app))
-    .use(vhost("radio.amelted.dev"), radioApp);
+    .use(vhost("radio.amelted.dev", radioApp));
 
 // Create the HTTP/S servers, using the vhosted express app.
 const httpsServer : any = https.createServer({ key: readFileSync('server.key'), cert: readFileSync('server.cert') }, serv)
