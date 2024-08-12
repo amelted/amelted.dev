@@ -17,7 +17,7 @@ let lolApp = express()
     .all("*", s404);
 let radioApp = express()
     .use("/", proxyPub)
-    .use("/listen", listen)
+    //.use("/listen", listen)
     .all("*", s404);
 let serv = express()
     .use(vhost("lol.amelted.dev", lolApp))
