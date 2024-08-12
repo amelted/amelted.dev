@@ -4,11 +4,18 @@ import { createProxyMiddleware } from 'http-proxy-middleware'
 
 export let proxyPub = createProxyMiddleware({
     target: "localhost:160",
-    pathFilter: "/public/melted_jam"
+    pathRewrite: {
+        "/listen":
+        "/public/melted_jam"
+    }
 })
 export let proxyRadio = createProxyMiddleware({
     target: "localhost:160",
-    pathFilter: "/listen/melted_jam/radio.mp3"
+    pathRewrite: {
+        "/listen":
+        "/listen/melted_jam/radio.mp3"
+    }
+
 })
 export let s404 = (request: Request, response: Response)=>{
     response.status(404).send(`you seem lost...`);
