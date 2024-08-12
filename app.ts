@@ -3,7 +3,7 @@ import https, {createServer} from 'https'
 import http, {ServerResponse, IncomingMessage} from 'http'
 import fs, {readFileSync} from 'fs'
 import vhost from 'vhost'
-import { lolFiles, proxyPub, s404 } from './misc'
+import { lolFiles, proxyPub, s404, listen } from './misc'
 
 
 
@@ -17,6 +17,7 @@ let lolApp = express()
     .all("*", s404);
 let radioApp = express()
     .use("/", proxyPub)
+    .use("/listen", listen)
     .all("*", s404);
 let serv = express()
     .use(vhost("lol.amelted.dev", lolApp))

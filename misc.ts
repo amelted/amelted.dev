@@ -8,8 +8,10 @@ export let proxyPub = createProxyMiddleware({
     pathRewrite: {
         "/": "http://127.0.0.1:160/public/melted_jam",
         "/listen": "http://127.0.0.1:160/listen/melted_jam/radio.mp3"
-    }
+    },
+    changeOrigin: true
 })
+//export let listen = 
 export let s404 = (request: Request, response: Response)=>{
     response.status(404).send(`you seem lost...`);
     response.end();
