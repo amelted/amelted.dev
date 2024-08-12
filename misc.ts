@@ -9,11 +9,6 @@ export let proxyPub = createProxyMiddleware({
         "/listen": "http://127.0.0.1:160/listen/melted_jam/radio.mp3"
     }
 })
-export let proxyRadio = createProxyMiddleware({
-    target: "http://127.0.0.1:160/",
-    pathFilter: "/listen/melted_jam/radio.mp3"
-
-})
 export let s404 = (request: Request, response: Response)=>{
     response.status(404).send(`you seem lost...`);
     response.end();
