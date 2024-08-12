@@ -3,7 +3,7 @@ import https, {createServer} from 'https'
 import http, {ServerResponse, IncomingMessage} from 'http'
 import fs, {readFileSync} from 'fs'
 import vhost from 'vhost'
-import { lolFiles, proxyPub, proxyRadio, s404 } from './misc'
+import { lolFiles, proxyPub, s404 } from './misc'
 
 
 
