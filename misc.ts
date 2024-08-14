@@ -9,7 +9,7 @@ export let proxyPub = createProxyMiddleware({
         '^\/listen.$' : '/listen',
         '^\/listen\/$': '/listen/melted_jam/',
         '^\/webdj\/$': '/webdj/melted_jam/',
-        '^\/.{1,}$': '/',
+        //'^\/.{1,}$': '/',
         '^\/$': '/public/melted_jam'
     },
     //changeOrigin: true
